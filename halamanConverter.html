@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo-brand.png" alt="Logo Brand">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Headline -->
+    <section class="headline">
+        <h1>Currency Converter</h1>
+        <p>Convert your money between different currencies easily.</p>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="converter-container">
+            <!-- Amount Input -->
+            <div class="currency-box">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter amount" min="0">
+            </div>
+
+            <!-- Currency Selection -->
+            <div class="currency-select">
+                <!-- From Currency -->
+                <div class="currency-group">
+                    <label for="from-currency">From:</label>
+                    <select id="from-currency">
+                        <option value="USD">🇺🇸 USD - United States Dollar</option>
+                        <option value="EUR">🇪🇺 EUR - Euro</option>
+                        <option value="BND">🇧🇳 BND - Brunei Dollar</option>
+                        <option value="KHR">🇰🇭 KHR - Cambodian Riel</option>
+                        <option value="IDR">🇮🇩 IDR - Indonesian Rupiah</option>
+                        <option value="MYR">🇲🇾 MYR - Malaysian Ringgit</option>
+                        <option value="MMK">🇲🇲 MMK - Myanmar Kyat</option>
+                        <option value="PHP">🇵🇭 PHP - Philippine Peso</option>
+                        <option value="SGD">🇸🇬 SGD - Singapore Dollar</option>
+                        <option value="THB">🇹🇭 THB - Thai Baht</option>
+                        <option value="VND">🇻🇳 VND - Vietnamese Dong</option>
+                        <option value="GBP">🇬🇧 GBP - British Pound</option>
+                        <option value="CHF">🇨🇭 CHF - Swiss Franc</option>
+                        <option value="RUB">🇷🇺 RUB - Russian Ruble</option>
+                        <option value="TRY">🇹🇷 TRY - Turkish Lira</option>
+                        <option value="CAD">🇨🇦 CAD - Canadian Dollar</option>
+                        <option value="BRL">🇧🇷 BRL - Brazilian Real</option>
+                        <option value="ARS">🇦🇷 ARS - Argentine Peso</option>
+                        <option value="ZAR">🇿🇦 ZAR - South African Rand</option>
+                        <option value="JPY">🇯🇵 JPY - Japanese Yen</option>
+                        <option value="CNY">🇨🇳 CNY - Chinese Yuan</option>
+                        <option value="KRW">🇰🇷 KRW - South Korean Won</option>
+                        <option value="HKD">🇭🇰 HKD - Hong Kong Dollar</option>
+                    </select>
+                </div>
+
+                <!-- Swap Button -->
+                <button id="swap-btn" onclick="swapCurrencies()">⇅</button>
+
+                <!-- To Currency -->
+                <div class="currency-group">
+                    <label for="to-currency">To:</label>
+                    <select id="to-currency">
+                        <option value="EUR">🇪🇺 EUR - Euro</option>
+                        <option value="USD">🇺🇸 USD - United States Dollar</option>
+                        <option value="BND">🇧🇳 BND - Brunei Dollar</option>
+                        <option value="KHR">🇰🇭 KHR - Cambodian Riel</option>
+                        <option value="IDR">🇮🇩 IDR - Indonesian Rupiah</option>
+                        <option value="MYR">🇲🇾 MYR - Malaysian Ringgit</option>
+                        <option value="MMK">🇲🇲 MMK - Myanmar Kyat</option>
+                        <option value="PHP">🇵🇭 PHP - Philippine Peso</option>
+                        <option value="SGD">🇸🇬 SGD - Singapore Dollar</option>
+                        <option value="THB">🇹🇭 THB - Thai Baht</option>
+                        <option value="VND">🇻🇳 VND - Vietnamese Dong</option>
+                        <option value="GBP">🇬🇧 GBP - British Pound</option>
+                        <option value="CHF">🇨🇭 CHF - Swiss Franc</option>
+                        <option value="RUB">🇷🇺 RUB - Russian Ruble</option>
+                        <option value="TRY">🇹🇷 TRY - Turkish Lira</option>
+                        <option value="CAD">🇨🇦 CAD - Canadian Dollar</option>
+                        <option value="BRL">🇧🇷 BRL - Brazilian Real</option>
+                        <option value="ARS">🇦🇷 ARS - Argentine Peso</option>
+                        <option value="ZAR">🇿🇦 ZAR - South African Rand</option>
+                        <option value="JPY">🇯🇵 JPY - Japanese Yen</option>
+                        <option value="CNY">🇨🇳 CNY - Chinese Yuan</option>
+                        <option value="KRW">🇰🇷 KRW - South Korean Won</option>
+                        <option value="HKD">🇭🇰 HKD - Hong Kong Dollar</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Convert Button -->
+            <button id="convert-btn" onclick="convertCurrency()">Convert</button>
+            <p id="result"></p>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section class="how-to-use">
+        <h2>How to Use</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1. Enter the Amount</h3>
+                <p>Simply type in the amount you want to convert in the input box.</p>
+            </div>
+            <div class="step">
+                <h3>2. Select Your Currencies</h3>
+                <p>Click the dropdown menu to select the currency you want to convert from and to.</p>
+            </div>
+            <div class="step">
+                <h3>3. That's It</h3>
+                <p>Our currency converter will show the exchange rate and calculate the result for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><a href="#about">About</a></p>
+            <p>Social Media: <a href="#">Facebook</a> | <a href="https://www.instagram.com/jtoosan">Instagram</a> | <a href="#">Twitter</a></p>
+            <p>© Copyright 2025 Jtoosan. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>
