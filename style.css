@@ -13,24 +13,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Breadcrumb */
-.breadcrumb {
-    font-size: 14px; /* Ubah ukuran teks */
-    padding: 10px 15px; /* Sesuaikan padding */
-    margin-bottom: 15px; /* Atur jarak bawah */
-    background-color: #f8f9fa; /* Warna latar belakang */
-    border-radius: 5px; /* Membuat sudut lebih halus */
-}
-
-.breadcrumb a {
-    text-decoration: none;
-    color: #004d00; /* Warna teks */
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
 /* ------------------ */
 /* Navbar */
 /* ------------------ */
