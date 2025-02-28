@@ -1,0 +1,273 @@
+/* Body */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #004d00;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo img {
+    height: 50px;  /* Tinggi logo */
+    width: auto;   /* Lebar otomatis agar proporsional */
+    object-fit: contain;
+}
+
+/* Headline */
+.headline {
+    text-align: center;
+    background-color: #004d00;
+    color: white;
+    padding: 80px 20px;
+    margin-top: 70px;
+}
+
+.headline h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.headline p {
+    font-size: 18px;
+}
+
+/* Converter Content */
+.content {
+    background-color: #004d00;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Container untuk semua elemen konversi */
+.converter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Flexbox untuk bagian input Amount, From, Swap, dan To */
+.currency-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Untuk input amount */
+.currency-box .amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.currency-box label {
+    font-weight: 600;
+    font-size: 18px;
+    color: #004d00;
+    margin-bottom: 10px;
+}
+
+.currency-box input {
+    padding: 20px;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Menyusun From, Swap, dan To secara horizontal */
+.currency-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.currency-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.currency-group select {
+    padding: 20px;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Swap Button */
+#swap-btn {
+    color: #000;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #000;
+    font-size: 30px;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    font-weight: bold;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* Mode Mobile */
+@media screen and (max-width: 768px) {
+    .currency-select {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #swap-btn {
+        transform: rotate(0deg); /* Rotasi tombol swap untuk mobile */
+        width: 60px;
+        height: 60px;
+        margin: 0;
+    }
+
+    .navbar .logo img {
+        height: 40px;  /* Sesuaikan ukuran logo untuk tampilan mobile */
+    }
+}
+
+/* Mode Web dan Tablet */
+@media screen and (min-width: 769px) {
+    .currency-select {
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+    }
+
+    #swap-btn {
+        transform: rotate(90deg); /* Rotasi horizontal untuk desktop */
+        width: 70px;
+        height: 70px;
+    }
+
+    .navbar .logo img {
+        height: 50px;  /* Ukuran logo untuk tampilan desktop */
+    }
+}
+
+/* Convert Button */
+#convert-btn {
+    background-color: #004d00;
+    color: white;
+    cursor: pointer;
+    padding: 18px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#convert-btn:hover {
+    background-color: #003300;
+    transform: translateY(-2px);
+}
+
+/* How-to-Use Section */
+.how-to-use {
+    background-color: white;
+    color: black;
+    padding: 50px 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.how-to-use h2 {
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #004d00;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.step {
+    background-color: #f0f0f0;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.step:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-5px);
+}
+
+.step h3 {
+    font-weight: 600;
+    color: #004d00;
+}
+
+/* Footer */
+.footer {
+    background-color: #004d00;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 2px solid #003300;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: #ccc;
+  }
