@@ -78,10 +78,6 @@ body {
 .navbar .menu a:hover {
     color: #ccc;
 }
-/* Jarak antara Navbar dan Judul */
-.page-title {
-    margin-top: 100px; /* Sesuaikan agar tidak terlalu dekat dengan navbar */
-    text-align: center;
 }
 /* ------------------ */
 /* Footer */
