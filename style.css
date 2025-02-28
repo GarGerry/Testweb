@@ -15,26 +15,20 @@ body {
 
 /* Breadcrumb */
 .breadcrumb {
-    font-size: 16px;
-    margin: 20px 0;
-    padding-left: 20px;
-    color: #666;
+    font-size: 14px; /* Ubah ukuran teks */
+    padding: 10px 15px; /* Sesuaikan padding */
+    margin-bottom: 15px; /* Atur jarak bawah */
+    background-color: #f8f9fa; /* Warna latar belakang */
+    border-radius: 5px; /* Membuat sudut lebih halus */
 }
 
 .breadcrumb a {
     text-decoration: none;
-    color: #004d00;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    color: #004d00; /* Warna teks */
 }
 
 .breadcrumb a:hover {
-    color: #002b00;
-}
-
-.breadcrumb span {
-    font-weight: 100;
-    color: #333;
+    text-decoration: underline;
 }
 
 /* ------------------ */
