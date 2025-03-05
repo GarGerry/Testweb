@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="converter.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
+<body class="bg-gray-100 font-sans">
 
     <!-- Navbar -->
-    <header>
-        <nav class="navbar">
+    <header class="bg-blue-600 text-white">
+        <nav class="navbar container mx-auto p-4 flex justify-between items-center">
             <div class="logo">
                 <a href="index.html">
-                    <img src="assets/images/logo-brand.png" alt="Logo Brand">
+                    <img src="assets/images/logo-brand.png" alt="Logo Brand" class="h-10">
                 </a>
             </div>
         </nav>
     </header>
-    
+
     <!-- Headline -->
-    <section class="headline">
-        <h1>Currency Converter</h1>
-        <p>Convert your money between different currencies easily.</p>
+    <section class="headline text-center my-10">
+        <h1 class="text-4xl font-bold text-gray-800">Currency Converter</h1>
+        <p class="text-lg text-gray-600">Convert your money between different currencies easily.</p>
     </section>
 
     <!-- Content Section -->
-    <section class="content">
-        <div class="converter-container">
+    <section class="content container mx-auto p-6">
+        <div class="converter-container bg-white rounded-lg shadow-lg p-6">
+
             <!-- Amount Input -->
-            <div class="currency-box">
-                <label for="amount">Amount:</label>
-                <input type="number" id="amount" placeholder="Enter amount" min="0">
+            <div class="currency-box mb-4">
+                <label for="amount" class="block text-lg font-semibold text-gray-700">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter amount" min="0"
+                    class="w-full p-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
             <!-- Currency Selection -->
-            <div class="currency-select">
+            <div class="currency-select flex items-center justify-between space-x-4 mb-4">
                 <!-- From Currency -->
-                <div class="currency-group">
-                    <label for="from-currency">From:</label>
-                    <select id="from-currency">
+                <div class="currency-group flex flex-col w-1/2">
+                    <label for="from-currency" class="text-lg font-semibold text-gray-700">From:</label>
+                    <select id="from-currency"
+                        class="p-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="USD">🇺🇸 USD - United States Dollar</option>
                         <option value="EUR">🇪🇺 EUR - Euro</option>
                         <option value="BND">🇧🇳 BND - Brunei Dollar</option>
@@ -68,12 +74,15 @@
                 </div>
 
                 <!-- Swap Button -->
-                <button id="swap-btn" onclick="swapCurrencies()">⇅</button>
+                <button id="swap-btn" onclick="swapCurrencies()" class="text-3xl text-blue-600 px-4 py-2 bg-gray-200 rounded-lg">
+                    ⇅
+                </button>
 
                 <!-- To Currency -->
-                <div class="currency-group">
-                    <label for="to-currency">To:</label>
-                    <select id="to-currency">
+                <div class="currency-group flex flex-col w-1/2">
+                    <label for="to-currency" class="text-lg font-semibold text-gray-700">To:</label>
+                    <select id="to-currency"
+                        class="p-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="EUR">🇪🇺 EUR - Euro</option>
                         <option value="USD">🇺🇸 USD - United States Dollar</option>
                         <option value="BND">🇧🇳 BND - Brunei Dollar</option>
@@ -102,39 +111,41 @@
             </div>
 
             <!-- Convert Button -->
-            <button id="convert-btn" onclick="convertCurrency()">Convert</button>
-            <p id="result"></p>
+            <button id="convert-btn" onclick="convertCurrency()"
+                class="w-full p-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300">Convert</button>
+            <p id="result" class="text-lg text-gray-800 mt-4"></p>
         </div>
     </section>
 
     <!-- How to Use Section -->
-    <section class="how-to-use">
-        <h2>How to Use</h2>
-        <div class="steps">
-            <div class="step">
-                <h3>1. Enter the Amount</h3>
-                <p>Simply type in the amount you want to convert in the input box.</p>
+    <section class="how-to-use container mx-auto p-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">How to Use</h2>
+        <div class="steps grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="step p-4 bg-gray-50 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-gray-700">1. Enter the Amount</h3>
+                <p class="text-gray-600">Simply type in the amount you want to convert in the input box.</p>
             </div>
-            <div class="step">
-                <h3>2. Select Your Currencies</h3>
-                <p>Click the dropdown menu to select the currency you want to convert from and to.</p>
+            <div class="step p-4 bg-gray-50 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-gray-700">2. Select Your Currencies</h3>
+                <p class="text-gray-600">Click the dropdown menu to select the currency you want to convert from and to.</p>
             </div>
-            <div class="step">
-                <h3>3. That's It</h3>
-                <p>Our currency converter will show the exchange rate and calculate the result for you.</p>
+            <div class="step p-4 bg-gray-50 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-gray-700">3. That's It</h3>
+                <p class="text-gray-600">Our currency converter will show the exchange rate and calculate the result for you.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p><a href="#about">About</a></p>
-            <p>Social Media: <a href="#">Facebook</a> | <a href="https://www.instagram.com/jtoosan">Instagram</a> | <a href="#">Twitter</a></p>
+    <footer class="footer bg-blue-600 text-white p-4">
+        <div class="footer-content container mx-auto text-center">
+            <p><a href="#about" class="underline">About</a></p>
+            <p class="my-2">Social Media: <a href="#" class="underline">Facebook</a> | <a href="https://www.instagram.com/jtoosan" class="underline">Instagram</a> | <a href="#" class="underline">Twitter</a></p>
             <p>© Copyright 2025 Jtoosan. All Rights Reserved</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-  </html>
+
+</html>
